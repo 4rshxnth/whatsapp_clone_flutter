@@ -14,8 +14,14 @@ class Splash extends StatelessWidget {
       );
     });
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: Center(child: Lottie.asset('assets/whatsapp.json')),
+      backgroundColor: Colors.black,
+      body: Center(
+        child: SizedBox(
+          width: MediaQuery.of(context).size.width * 0.4,
+          height: MediaQuery.of(context).size.width * 0.4,
+          child: Lottie.asset('assets/whatsapp.json', fit: BoxFit.contain),
+        ),
+      ),
     );
   }
 }

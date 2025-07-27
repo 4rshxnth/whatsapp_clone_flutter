@@ -15,11 +15,11 @@ class Chats extends StatelessWidget {
         ),
         actions: [
           Icon(Icons.qr_code),
-          SizedBox(width: 15),
+          SizedBox(width: 20),
           Icon(Icons.camera_alt_outlined),
-          SizedBox(width: 15),
+          SizedBox(width: 20),
           Icon(Icons.more_vert),
-          SizedBox(width: 15),
+          SizedBox(width: 20),
         ],
       ),
       floatingActionButton: FloatingActionButton(
@@ -35,7 +35,11 @@ class Chats extends StatelessWidget {
           children: [
             TextField(
               decoration: InputDecoration(
-                hintText: 'Search',
+                hintText: 'Ask Meta AI or Search',
+                hintStyle: TextStyle(
+                  color: const Color.fromARGB(202, 95, 95, 95),
+                  fontSize: 18,
+                ),
                 border: OutlineInputBorder(
                   borderSide: BorderSide.none,
                   borderRadius: BorderRadius.circular(50),
@@ -44,46 +48,355 @@ class Chats extends StatelessWidget {
                   Icons.search,
                   color: const Color.fromARGB(202, 95, 95, 95),
                 ),
-                fillColor: const Color.fromARGB(202, 39, 39, 39),
+                fillColor: const Color.fromARGB(207, 47, 47, 47),
                 filled: true,
               ),
             ),
+            SizedBox(height: 10),
             ListTile(
-              title: Text('User 1'),
-              subtitle: Text('Hi'),
-              trailing: Text('10.45 am'),
+              title: Text(
+                'John Doe',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 19,
+                ),
+              ),
+              subtitle: Text(
+                'Good morning',
+                style: TextStyle(
+                  color: Colors.white60,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 15,
+                ),
+              ),
+              trailing: Text(
+                '6.00 am',
+                style: TextStyle(
+                  color: Colors.white60,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 12,
+                ),
+              ),
               leading: CircleAvatar(
                 backgroundImage: AssetImage('assets/avatar1.png'),
               ),
             ),
             ListTile(
-              title: Text('User 2'),
-              subtitle: Text('Hey there!'),
-              trailing: Text('11.45 pm'),
+              title: Text(
+                'Alex Johnson',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 19,
+                ),
+              ),
+              subtitle: Text(
+                'Hi! What’s new today?',
+                style: TextStyle(
+                  color: Colors.white60,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 15,
+                ),
+              ),
+              trailing: Text(
+                '9.30 pm',
+                style: TextStyle(
+                  color: Colors.white60,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 12,
+                ),
+              ),
               leading: CircleAvatar(
                 backgroundImage: AssetImage('assets/avatar1.png'),
               ),
             ),
             ListTile(
-              title: Text('User 3'),
-              subtitle: Text('How are you?'),
-              trailing: Text('6.00 am'),
+              title: Text(
+                'Jane Smith',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 19,
+                ),
+              ),
+              subtitle: Text(
+                'How are you?',
+                style: TextStyle(
+                  color: Colors.white60,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 15,
+                ),
+              ),
+              trailing: Text(
+                '9.30 am',
+                style: TextStyle(
+                  color: Colors.white60,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 12,
+                ),
+              ),
               leading: CircleAvatar(
                 backgroundImage: AssetImage('assets/avatar1.png'),
               ),
             ),
             ListTile(
-              title: Text('User 4'),
-              subtitle: Text('You are awsome'),
-              trailing: Text('12.00 pm'),
+              title: Text(
+                'Emily Davis',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 19,
+                ),
+              ),
+              subtitle: Text(
+                'Hey there!',
+                style: TextStyle(
+                  color: Colors.white60,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 15,
+                ),
+              ),
+              trailing: Text(
+                '2.30 pm',
+                style: TextStyle(
+                  color: Colors.white60,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 12,
+                ),
+              ),
               leading: CircleAvatar(
                 backgroundImage: AssetImage('assets/avatar1.png'),
               ),
             ),
             ListTile(
-              title: Text('User 5'),
-              subtitle: Text('Heyy buddy!'),
-              trailing: Text('9.00 pm'),
+              title: Text(
+                'Michael Lee',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 19,
+                ),
+              ),
+              subtitle: Text(
+                'Heyy buddy!',
+                style: TextStyle(
+                  color: Colors.white60,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 15,
+                ),
+              ),
+              trailing: Text(
+                '8.27 pm',
+                style: TextStyle(
+                  color: Colors.white60,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 12,
+                ),
+              ),
+              leading: CircleAvatar(
+                backgroundImage: AssetImage('assets/avatar1.png'),
+              ),
+            ),
+            ListTile(
+              title: Text(
+                'Sarah Kim',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 19,
+                ),
+              ),
+              subtitle: Text(
+                'Hey! Ping me when free.',
+                style: TextStyle(
+                  color: Colors.white60,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 15,
+                ),
+              ),
+              trailing: Text(
+                'Yesterday',
+                style: TextStyle(
+                  color: Colors.white60,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 12,
+                ),
+              ),
+              leading: CircleAvatar(
+                backgroundImage: AssetImage('assets/avatar1.png'),
+              ),
+            ),
+            ListTile(
+              title: Text(
+                'David Clark',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 19,
+                ),
+              ),
+              subtitle: Text(
+                'Hi! Sent the file just now.',
+                style: TextStyle(
+                  color: Colors.white60,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 15,
+                ),
+              ),
+              trailing: Text(
+                'Yesterday',
+                style: TextStyle(
+                  color: Colors.white60,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 12,
+                ),
+              ),
+              leading: CircleAvatar(
+                backgroundImage: AssetImage('assets/avatar1.png'),
+              ),
+            ),
+            ListTile(
+              title: Text(
+                'Emma Taylor',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 19,
+                ),
+              ),
+              subtitle: Text(
+                'Hello! Let’s catch up later.',
+                style: TextStyle(
+                  color: Colors.white60,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 15,
+                ),
+              ),
+              trailing: Text(
+                '26/07/25',
+                style: TextStyle(
+                  color: Colors.white60,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 12,
+                ),
+              ),
+              leading: CircleAvatar(
+                backgroundImage: AssetImage('assets/avatar1.png'),
+              ),
+            ),
+            ListTile(
+              title: Text(
+                'Daniel Wright',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 19,
+                ),
+              ),
+              subtitle: Text(
+                'Hey! You there?',
+                style: TextStyle(
+                  color: Colors.white60,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 15,
+                ),
+              ),
+              trailing: Text(
+                '24/07/25',
+                style: TextStyle(
+                  color: Colors.white60,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 12,
+                ),
+              ),
+              leading: CircleAvatar(
+                backgroundImage: AssetImage('assets/avatar1.png'),
+              ),
+            ),
+            ListTile(
+              title: Text(
+                'Olivia Brown',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 19,
+                ),
+              ),
+              subtitle: Text(
+                'Hi! Meeting got postponed',
+                style: TextStyle(
+                  color: Colors.white60,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 15,
+                ),
+              ),
+              trailing: Text(
+                '23/07/25',
+                style: TextStyle(
+                  color: Colors.white60,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 12,
+                ),
+              ),
+              leading: CircleAvatar(
+                backgroundImage: AssetImage('assets/avatar1.png'),
+              ),
+            ),
+            ListTile(
+              title: Text(
+                'James Miller',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 19,
+                ),
+              ),
+              subtitle: Text(
+                'Yo! Game night?',
+                style: TextStyle(
+                  color: Colors.white60,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 15,
+                ),
+              ),
+              trailing: Text(
+                '20/07/25',
+                style: TextStyle(
+                  color: Colors.white60,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 12,
+                ),
+              ),
+              leading: CircleAvatar(
+                backgroundImage: AssetImage('assets/avatar1.png'),
+              ),
+            ),
+            ListTile(
+              title: Text(
+                'Sophia Wilson',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 19,
+                ),
+              ),
+              subtitle: Text(
+                'Heyy! Just got your message',
+                style: TextStyle(
+                  color: Colors.white60,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 15,
+                ),
+              ),
+              trailing: Text(
+                '15/07/25',
+                style: TextStyle(
+                  color: Colors.white60,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 12,
+                ),
+              ),
               leading: CircleAvatar(
                 backgroundImage: AssetImage('assets/avatar1.png'),
               ),
