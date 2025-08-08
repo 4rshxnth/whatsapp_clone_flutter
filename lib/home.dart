@@ -13,45 +13,52 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int index = 0;
-  List<Widget> pages = [Chats(), Updates(), Communities(), Calls()];
+
+  final List<Widget> pages = [
+    const Chats(),
+    const Status(),
+    const Community(),
+    const Calls(),
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
+      body: pages[index],
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.black,
+        currentIndex: index,
         onTap: (value) {
           setState(() {
             index = value;
           });
         },
         selectedItemColor: Colors.green,
-        unselectedItemColor: Colors.grey,
+        unselectedItemColor: Colors.white70,
         showUnselectedLabels: true,
-        currentIndex: index,
+        type: BottomNavigationBarType.fixed,
+        selectedFontSize: 12,
+        unselectedFontSize: 12,
         items: [
           BottomNavigationBarItem(
-            backgroundColor: Colors.black,
-            icon: Icon(Icons.message_outlined),
+            icon: Icon(index == 0 ? Icons.message : Icons.message_outlined),
             label: 'Chats',
           ),
           BottomNavigationBarItem(
-            backgroundColor: Colors.black,
-            icon: Icon(Icons.tips_and_updates_outlined),
+            icon: Icon(index == 1 ? Icons.update : Icons.update_outlined),
             label: 'Updates',
           ),
           BottomNavigationBarItem(
-            backgroundColor: Colors.black,
-            icon: Icon(Icons.people_alt_outlined),
+            icon: Icon(index == 2 ? Icons.groups : Icons.groups_outlined),
             label: 'Communities',
           ),
           BottomNavigationBarItem(
-            backgroundColor: Colors.black,
-            icon: Icon(Icons.call_outlined),
+            icon: Icon(index == 3 ? Icons.call : Icons.call_outlined),
             label: 'Calls',
           ),
         ],
       ),
-      body: pages[index],
     );
   }
 }

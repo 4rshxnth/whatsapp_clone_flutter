@@ -5,15 +5,89 @@ class Calls extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final List<Map<String, dynamic>> callList = [
+      {
+        "name": "John Doe",
+        "subtitle": "Today, 10:00 AM",
+        "icon": Icons.call_outlined,
+        "iconColor": Colors.green,
+        "avatar": "assets/avatar1.png",
+      },
+      {
+        "name": "Alex Johnson",
+        "subtitle": "Today, 09:45 AM",
+        "icon": Icons.call_received_outlined,
+        "iconColor": Colors.green,
+        "avatar": "assets/avatar1.png",
+      },
+      {
+        "name": "Jane Smith",
+        "subtitle": "Today, 08:30 AM",
+        "icon": Icons.call_missed_outgoing,
+        "iconColor": Colors.red,
+        "avatar": "assets/avatar1.png",
+      },
+      {
+        "name": "Emily Davis",
+        "subtitle": "Yesterday, 07:15 PM",
+        "icon": Icons.missed_video_call_outlined,
+        "iconColor": Colors.red,
+        "avatar": "assets/avatar1.png",
+      },
+      {
+        "name": "Micheal Lee",
+        "subtitle": "Yesterday, 06:00 PM",
+        "icon": Icons.call_outlined,
+        "iconColor": Colors.white,
+        "avatar": "assets/avatar1.png",
+      },
+      {
+        "name": "Sophia Miller",
+        "subtitle": "Yesterday, 04:00 PM",
+        "icon": Icons.video_call_outlined,
+        "iconColor": Colors.green,
+        "avatar": "assets/avatar1.png",
+      },
+      {
+        "name": "William Brown",
+        "subtitle": "Yesterday, 02:30 PM",
+        "icon": Icons.call_received_outlined,
+        "iconColor": Colors.green,
+        "avatar": "assets/avatar1.png",
+      },
+      {
+        "name": "Qlivia Wilson",
+        "subtitle": "2 August, 10:00 PM",
+        "icon": Icons.call_missed_outgoing,
+        "iconColor": Colors.red,
+        "avatar": "assets/avatar1.png",
+      },
+      {
+        "name": "James Anderson",
+        "subtitle": "1 August, 09:00 AM",
+        "icon": Icons.video_call_outlined,
+        "iconColor": Colors.white,
+        "avatar": "assets/avatar1.png",
+      },
+      {
+        "name": "Nikhil",
+        "subtitle": "31 July, 07:30 AM",
+        "icon": Icons.call_outlined,
+        "iconColor": Colors.white,
+        "avatar": "assets/avatar1.png",
+      },
+    ];
+
     return Scaffold(
+      backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Colors.black,
         foregroundColor: Colors.white,
-        title: Text(
+        title: const Text(
           'Calls',
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          style: TextStyle(fontWeight: FontWeight.bold),
         ),
-        actions: [
+        actions: const [
           Icon(Icons.qr_code_scanner_outlined),
           SizedBox(width: 15),
           Icon(Icons.search),
@@ -22,18 +96,17 @@ class Calls extends StatelessWidget {
           SizedBox(width: 15),
         ],
       ),
-      backgroundColor: Colors.black,
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         backgroundColor: Colors.green,
         foregroundColor: Colors.white,
-        child: Icon(Icons.call_sharp),
+        child: const Icon(Icons.call_sharp),
       ),
       body: ListView(
         children: [
-          SizedBox(height: 20),
-          Padding(
-            padding: const EdgeInsets.only(left: 20),
+          const SizedBox(height: 20),
+          const Padding(
+            padding: EdgeInsets.only(left: 20),
             child: Text(
               'Favourites',
               style: TextStyle(
@@ -43,8 +116,8 @@ class Calls extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 5),
-          ListTile(
+          const SizedBox(height: 5),
+          const ListTile(
             leading: CircleAvatar(
               backgroundColor: Colors.green,
               child: Icon(Icons.favorite, color: Colors.black),
@@ -54,9 +127,9 @@ class Calls extends StatelessWidget {
               style: TextStyle(color: Colors.white),
             ),
           ),
-          SizedBox(height: 10),
-          Padding(
-            padding: const EdgeInsets.only(left: 20),
+          const SizedBox(height: 10),
+          const Padding(
+            padding: EdgeInsets.only(left: 20),
             child: Text(
               'Recents',
               style: TextStyle(
@@ -66,118 +139,31 @@ class Calls extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 15),
-          ListTile(
-            title: Text(
-              'User 1',
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.white,
-                fontWeight: FontWeight.w500,
+          const SizedBox(height: 15),
+          ...callList.map((call) {
+            return ListTile(
+              title: Text(
+                call['name'],
+                style: TextStyle(
+                  fontSize: 16,
+                  color: call['iconColor'] == Colors.red
+                      ? Colors.red
+                      : Colors.white,
+                  fontWeight: FontWeight.w500,
+                ),
               ),
-            ),
-            subtitle: Text(
-              'Today 10:00 am',
-              style: TextStyle(color: const Color.fromARGB(161, 158, 158, 158)),
-            ),
-            trailing: Icon(Icons.call_outlined, color: Colors.white),
-            leading: CircleAvatar(
-              backgroundImage: AssetImage('assets/avatar1.png'),
-            ),
-          ),
-          ListTile(
-            title: Text(
-              'User 2',
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.white,
-                fontWeight: FontWeight.w500,
+              subtitle: Text(
+                call['subtitle'],
+                style: const TextStyle(
+                  color: Color.fromARGB(161, 158, 158, 158),
+                ),
               ),
-            ),
-            subtitle: Text(
-              'Today 10:00 am',
-              style: TextStyle(color: const Color.fromARGB(161, 158, 158, 158)),
-            ),
-            trailing: Icon(Icons.call_outlined, color: Colors.white),
-            leading: CircleAvatar(
-              backgroundImage: AssetImage('assets/avatar1.png'),
-            ),
-          ),
-          ListTile(
-            title: Text(
-              'User 3',
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.red,
-                fontWeight: FontWeight.w500,
+              trailing: Icon(call['icon'], color: call['iconColor']),
+              leading: CircleAvatar(
+                backgroundImage: AssetImage(call['avatar']),
               ),
-            ),
-            subtitle: Text(
-              'Today 10:00 am',
-              style: TextStyle(color: const Color.fromARGB(161, 158, 158, 158)),
-            ),
-            trailing: Icon(Icons.missed_video_call_outlined, color: Colors.red),
-            leading: CircleAvatar(
-              backgroundImage: AssetImage('assets/avatar1.png'),
-            ),
-          ),
-          ListTile(
-            title: Text(
-              'User 4',
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.white,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-            subtitle: Text(
-              'Today 10:00 am',
-              style: TextStyle(color: const Color.fromARGB(161, 158, 158, 158)),
-            ),
-            trailing: Icon(Icons.call_received_outlined, color: Colors.green),
-            leading: CircleAvatar(
-              backgroundImage: AssetImage('assets/avatar1.png'),
-            ),
-          ),
-          ListTile(
-            title: Text(
-              'User 5',
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.red,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-            subtitle: Text(
-              'Today 10:00 am',
-              style: TextStyle(color: const Color.fromARGB(161, 158, 158, 158)),
-            ),
-            trailing: Icon(Icons.call_missed_outgoing, color: Colors.red),
-            leading: CircleAvatar(
-              backgroundImage: AssetImage('assets/avatar1.png'),
-            ),
-          ),
-          ListTile(
-            title: Text(
-              'User 2',
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.white,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-            subtitle: Text(
-              'Yesterday 10:00 am',
-              style: TextStyle(color: const Color.fromARGB(161, 158, 158, 158)),
-            ),
-            trailing: Icon(
-              Icons.missed_video_call_outlined,
-              color: Colors.white,
-            ),
-            leading: CircleAvatar(
-              backgroundImage: AssetImage('assets/avatar1.png'),
-            ),
-          ),
+            );
+          }).toList(),
         ],
       ),
     );
