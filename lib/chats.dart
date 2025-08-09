@@ -106,7 +106,6 @@ class Chats extends StatelessWidget {
         padding: const EdgeInsets.all(12.0),
         child: ListView(
           children: [
-            // Search bar
             TextField(
               decoration: InputDecoration(
                 hintText: 'Ask Meta AI or Search',
@@ -127,8 +126,6 @@ class Chats extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 10),
-
-            // Chat tiles
             ...chatList.map((chat) => _buildChatTile(chat)).toList(),
           ],
         ),
