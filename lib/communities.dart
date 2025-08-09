@@ -30,7 +30,6 @@ class Community extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // Image from assets
             SizedBox(
               height: 250,
               child: Image.asset(

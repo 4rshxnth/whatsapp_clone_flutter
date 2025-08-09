@@ -40,7 +40,6 @@ class Status extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 12),
         children: [
-          // My Status
           ListTile(
             leading: Stack(
               children: [
@@ -75,8 +74,6 @@ class Status extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 10),
-
-          // Recent Updates Label
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 10, vertical: 8),
             child: Text(
@@ -92,7 +89,6 @@ class Status extends StatelessWidget {
           _buildStatusTile("Alex Johnson", "Today, 9:00 AM", false),
           _buildStatusTile("Jane Smith", "Yesterday, 8:30 PM", false),
 
-          // Viewed Updates Label
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 10, vertical: 8),
             child: Text(
@@ -136,7 +132,7 @@ class Status extends StatelessWidget {
         ),
       ),
       subtitle: Text(time, style: const TextStyle(color: Colors.white60)),
-      onTap: () {}, // No functionality – just UI
+      onTap: () {},
     );
   }
 }
